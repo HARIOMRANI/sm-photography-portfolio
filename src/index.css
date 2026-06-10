@@ -1,0 +1,60 @@
+@import url('https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,400..900;1,6..96,400..900&family=Hanken+Grotesk:ital,wght@0,100..900;1,100..900&family=Space+Grotesk:wght@300..700&display=swap');
+
+@import "tailwindcss";
+
+@theme {
+  --color-background: #131313;
+  --color-surface: #131313;
+  --color-charcoal: #2A2A2A;
+  --color-gold: #D4AF37;
+  --color-bronze: #806031;
+  --color-pitchblack: #050505;
+
+  --font-headline: "Bodoni Moda", serif;
+  --font-body: "Hanken Grotesk", sans-serif;
+  --font-mono: "Space Grotesk", monospace;
+}
+
+@layer base {
+  html, body {
+    @apply bg-pitchblack text-[#e5e2e1] font-body overflow-x-hidden m-0 p-0 antialiased;
+    cursor: none;
+  }
+  
+  /* Reset cursor for form elements and links temporarily until custom cursor handles them */
+  a, button, input, select, textarea {
+    cursor: none;
+  }
+}
+
+@layer utilities {
+  .glass-panel {
+    @apply bg-charcoal/30 backdrop-blur-[20px] border border-white/10;
+  }
+
+  .text-glow-gold {
+    text-shadow: 0 0 10px rgba(212, 175, 55, 0.5);
+  }
+
+  .box-glow-gold {
+    box-shadow: 0 0 30px rgba(212, 175, 55, 0.2);
+  }
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #050505;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #2A2A2A;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #D4AF37;
+}
